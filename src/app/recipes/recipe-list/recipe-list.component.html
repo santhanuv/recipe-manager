@@ -7,13 +7,12 @@
     Recipes
     <a href="#" class="btn btn-success">New Recipe</a>
   </div>
-  <button
-    class="list-group-item list-group-item-action card"
-    *ngFor="let recipe of recipeList; let i = index"
-    [ngClass]="activeIndex === i ? 'active' : ''"
-    (click)="activeIndex = i"
-  >
-    <h6 class="card-title">{{ recipe.title }}</h6>
-    <p class="card-subtitle fw-light">{{ recipe.description }}</p>
-  </button>
+  <div>
+    <app-recipe-item
+      *ngFor="let recipe of recipeList; let i = index"
+      [recipe]="recipe"
+      [isActive]="activeIndex === i"
+      (click)="activeIndex = i"
+    ></app-recipe-item>
+  </div>
 </div>

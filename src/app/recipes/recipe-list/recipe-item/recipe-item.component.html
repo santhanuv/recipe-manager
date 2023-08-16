@@ -1,1 +1,7 @@
-<p>recipe-item works!</p>
+<button
+  class="list-group-item list-group-item-action card"
+  [ngClass]="isActive ? 'active' : ''"
+>
+  <h6 class="card-title">{{ recipe.title }}</h6>
+  <p class="card-subtitle fw-light">{{ recipe.description }}</p>
+</button>
