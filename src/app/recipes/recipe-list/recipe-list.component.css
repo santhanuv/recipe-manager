@@ -1,10 +1,15 @@
-div {
+.app-container {
   height: 85vh;
   overflow-y: hidden;
 }
 
-div:hover {
+.app-container:hover {
   overflow-y: auto;
+}
+
+.app-main-header {
+  padding: 1rem;
+  background-color: rgb(231, 231, 231);
 }
 
 ::-webkit-scrollbar {

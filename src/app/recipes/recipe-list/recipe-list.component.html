@@ -1,4 +1,12 @@
-<div class="list-group list-group-flush border border-2 rounded-2">
+<div
+  class="list-group list-group-flush border border-2 rounded-2 app-container"
+>
+  <div
+    class="card-header d-flex justify-content-between app-main-header align-items-center"
+  >
+    Recipes
+    <a href="#" class="btn btn-success">New Recipe</a>
+  </div>
   <button
     class="list-group-item list-group-item-action card"
     *ngFor="let recipe of recipeList; let i = index"
