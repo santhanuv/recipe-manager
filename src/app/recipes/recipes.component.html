@@ -1,8 +1,13 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list [recipes]="recipeList"></app-recipe-list>
+    <app-recipe-list
+      [recipes]="recipeList"
+      #recipeListComponent
+    ></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-detail>{{
+      recipeList[recipeListComponent.activeIndex].details
+    }}</app-recipe-detail>
   </div>
 </div>

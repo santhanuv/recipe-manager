@@ -11,12 +11,12 @@ export class RecipesComponent {
     new Recipe(
       'Test Recipe',
       'This is a test recipe',
-      'These are the details of the recipe.'
+      'These are the details of the recipe 1.'
     ),
     new Recipe(
       'Test Recipe 2',
       'This is a test recipe 2',
-      'These are the details of the recipe.'
+      'These are the details of the recipe 2.'
     ),
   ];
 }

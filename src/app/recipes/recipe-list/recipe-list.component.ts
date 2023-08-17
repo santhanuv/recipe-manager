@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -9,4 +9,10 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent {
   @Input('recipes') recipeList: Recipe[] = [];
   activeIndex: number = 0;
+
+  changeActiveIndex(index: number): void {
+    if (index > -1 && index < this.recipeList.length) {
+      this.activeIndex = index;
+    }
+  }
 }
