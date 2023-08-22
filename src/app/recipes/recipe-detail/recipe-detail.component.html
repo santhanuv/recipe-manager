@@ -1,6 +1,6 @@
 <div class="container border border-2 details-container rounded-2">
   <h5>Details</h5>
   <div>
-    <ng-content></ng-content>
+    <p>{{ selectedRecipe ? selectedRecipe.details : "No recipe Selected!" }}</p>
   </div>
 </div>

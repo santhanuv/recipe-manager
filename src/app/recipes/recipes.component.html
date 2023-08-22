@@ -2,12 +2,10 @@
   <div class="col-md-5">
     <app-recipe-list
       [recipes]="recipeList"
-      #recipeListComponent
+      [activeIndex]="activeIndex"
     ></app-recipe-list>
   </div>
   <div class="col-md-7">
-    <app-recipe-detail>{{
-      recipeList[recipeListComponent.activeIndex].details
-    }}</app-recipe-detail>
+    <app-recipe-detail></app-recipe-detail>
   </div>
 </div>

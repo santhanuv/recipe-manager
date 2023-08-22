@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
+import { RecipeService } from '../services/recipe.service';
 import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
+  providers: [RecipeService],
 })
 export class RecipesComponent {
-  recipeList: Recipe[] = [
-    new Recipe(
-      'Test Recipe',
-      'This is a test recipe',
-      'These are the details of the recipe 1.'
-    ),
-    new Recipe(
-      'Test Recipe 2',
-      'This is a test recipe 2',
-      'These are the details of the recipe 2.'
-    ),
-  ];
+  recipeList: Recipe[] = [];
+  activeIndex: number = 0;
+
+  constructor(private recipeService: RecipeService) {}
+
+  ngOnInit(): void {
+    this.recipeList = this.recipeService.recipeList;
+    this.activeIndex = this.recipeService.activeRecipeIndex;
+    this.recipeService.activeIndexUpdateEmitter.subscribe(
+      (value) => (this.activeIndex = value)
+    );
+    this.recipeService.recipeListUpdateEmitter.subscribe(
+      (value) => (this.recipeList = value)
+    );
+  }
 }

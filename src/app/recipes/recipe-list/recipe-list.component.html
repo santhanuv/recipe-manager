@@ -12,7 +12,7 @@
       *ngFor="let recipe of recipeList; let i = index"
       [recipe]="recipe"
       [isActive]="activeIndex === i"
-      (click)="changeActiveIndex(i)"
+      (click)="changeActiveRecipe(recipe)"
     ></app-recipe-item>
   </div>
 </div>

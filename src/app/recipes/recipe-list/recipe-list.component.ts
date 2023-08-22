@@ -1,18 +1,23 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
 })
-export class RecipeListComponent {
+export class RecipeListComponent implements OnInit {
   @Input('recipes') recipeList: Recipe[] = [];
-  activeIndex: number = 0;
+  @Input() activeIndex: number = 0;
 
-  changeActiveIndex(index: number): void {
-    if (index > -1 && index < this.recipeList.length) {
-      this.activeIndex = index;
-    }
+  constructor(private recipeService: RecipeService) {}
+
+  ngOnInit(): void {
+    // this.activeIndex = this.recipeService.activeRecipeIndex;
+  }
+
+  changeActiveRecipe(recipe: Recipe) {
+    this.recipeService.activeRecipe = recipe;
   }
 }
